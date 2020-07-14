@@ -1,0 +1,12 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+Layout/LineLength:
+  Max: 100
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
+Style/StringLiterals:
+  Enabled: false
