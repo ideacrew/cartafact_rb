@@ -6,11 +6,18 @@ require "json"
 describe CartafactRb::Authorization::Assertion, "given:
 - a system name
 - a user id
-- an empty list of authorized_subjects
+- a single authorized subject
 " do
   let(:system_name) { "A CLIENT SYSTEM" }
   let(:user_id) { "A USER ID" }
-  let(:authorized_subjects) { [] }
+  let(:authorized_subjects) { [authorized_subject] }
+
+  let(:authorized_subject) do
+    CartafactRb::Authorization::AuthorizedSubject.new(
+      "subject_type",
+      "subject_id"
+    )
+  end
 
   let(:subject) do
     CartafactRb::Authorization::Assertion.new(
@@ -37,7 +44,7 @@ describe CartafactRb::Authorization::Assertion, "given:
             system: system_name,
             user_id: user_id
           },
-          authorized_subjects: authorized_subjects
+          authorized_subjects: authorized_subjects.map(&:as_json)
         }
       )
       Base64.encode64(json_value)
