@@ -16,6 +16,11 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+if ENV["COVERAGE"]
+  require "simplecov"
+  SimpleCov.start
+end
+
 require "cartafact_rb"
 
 RSpec.configure do |config|
