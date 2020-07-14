@@ -16,4 +16,6 @@ Gem::Specification.new do |s|
   s.files = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
+
+  s.add_dependency "faraday", "~> 0.17.3"
 end

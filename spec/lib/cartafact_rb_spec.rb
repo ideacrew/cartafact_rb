@@ -7,11 +7,11 @@ describe CartafactRb do
     expect(defined?(::CartafactRb::Client)).to be_truthy
   end
 
-  it "defines the authorized_identity class" do
-    expect(defined?(::CartafactRb::AuthorizedIdentity)).to be_truthy
+  it "defines the authorization module" do
+    expect(defined?(::CartafactRb::Authorization)).to be_truthy
   end
 
-  it "defines the authorized_subject class" do
-    expect(defined?(::CartafactRb::AuthorizedSubject)).to be_truthy
+  it "defines the resources module" do
+    expect(defined?(::CartafactRb::Resources)).to be_truthy
   end
 end
