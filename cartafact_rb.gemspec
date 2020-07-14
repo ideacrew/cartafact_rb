@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = %q{cartafact_client_rb}
+  s.name = %q{cartafact_rb}
   s.version = "0.1.0"
   s.date = %q{2020-07-14}
   s.summary = %q{Ruby Client for the Cartafact Document Store}
