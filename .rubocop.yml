@@ -8,5 +8,9 @@ Style/BlockComments:
   Exclude:
     - spec/spec_helper.rb
 
+Style/ExpandPathArguments:
+  Exclude:
+    - cartafact_rb.gemspec
+
 Style/StringLiterals:
   Enabled: false
