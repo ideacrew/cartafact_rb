@@ -42,17 +42,14 @@ module CartafactRb
 
       # @api private
       def encode_for_request
-        Faraday::ParamPart.new(
-          JSON.dump(as_json),
-          "application/json"
-        )
+        JSON.dump(as_json)
       end
 
       # @api private
       def as_json
         document = {
           title: @title,
-          document_type: @doc_type,
+          document_type: @document_type,
           subjects: @subjects.map(&:as_json)
         }
         (document[:identifier] = @identifier) unless @identifier.nil?

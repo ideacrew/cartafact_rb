@@ -29,7 +29,7 @@ Document Capabilities:
 * [x] List
 * [x] Read
 * [x] Download
-* [ ] Create
+* [x] Create
 
 Advanced Client Capabilities:
 * [ ] Abstracted Retry

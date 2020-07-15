@@ -23,10 +23,30 @@ module CartafactRb
       @system_secret = s_secret
       @client = Faraday.new(@endpoint_url) do |conn|
         conn.request :multipart
+        conn.adapter :net_http
       end
     end
 
-    def create(user_id, authorized_subjects, document_resource, file)
+    # Create a document in the store.
+    # @param user_id [String] The ID or Email of the user making the request.
+    # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>]
+    #   The authorized subjects for the request.
+    # @param create_resource [Cartafact::Resources::Document] The document properties.
+    # @param file [String, File] The file contents.
+    # @return [Cartafact::Resources::Document] The new document.
+    def create(user_id, authorized_subjects, create_resource, file)
+      assertion = generate_assertion(user_id, authorized_subjects)
+      resp = @client.post(CREATE_ENDPOINT_PATH) do |req|
+        req.headers["Accept"] = "application/json"
+        req.headers["Content-Type"] = "multipart/form-data"
+        assertion.encode_and_sign_to_http_request(req, @system_secret)
+        body = {}
+        body[:document] = create_resource.encode_for_request
+        body[:content] = Faraday::UploadIO.new(file, "application/octet-stream")
+        req.body = body
+      end
+      data = JSON.parse(resp.body)
+      CartafactRb::Resources::Document.new(data)
     end
 
     # List matching documents to access is authorized.

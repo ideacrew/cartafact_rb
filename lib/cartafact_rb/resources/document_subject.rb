@@ -16,7 +16,7 @@ module CartafactRb
         return [] if h_array.nil?
 
         h_array.map do |h|
-          h_stringed = h.stringify_keys
+          h_stringed = stringify_hash_keys(h)
           new(h_stringed["id"], h_stringed["type"])
         end
       end
@@ -27,6 +27,16 @@ module CartafactRb
           id: @id,
           type: @type
         }
+      end
+
+      protected
+
+      def stringify_hash_keys(hash)
+        result = {}
+        hash.each_key do |key|
+          result[key.to_s] = hash[key]
+        end
+        result
       end
     end
   end
