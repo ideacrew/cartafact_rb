@@ -3,11 +3,32 @@
 module CartafactRb
   module Resources
     class Document
-      attr_reader :id, :title, :document_type
-      attr_reader :description, :language, :format
-      attr_reader :date, :identifier
+      # @return [String]
+      attr_reader :id
+      # @return [String]
+      attr_reader :title
+      # @return [String]
+      attr_reader :document_type
+
+      # @return [String, nil]
+      attr_reader :description
+
+      # @return [String, nil]
+      attr_reader :language
+
+      # @return [String, nil]
+      attr_reader :format
+
+      # @return [String, nil]
+      attr_reader :date
+
+      # @return [String, nil]
+      attr_reader :identifier
+
+      # @return [Array<CartafactRb::Resources::DocumentSubject>]
       attr_reader :subjects
 
+      # @api private
       def initialize(json_hash)
         stringed_json = json_hash.stringify_keys
         @id = stringed_json["id"]

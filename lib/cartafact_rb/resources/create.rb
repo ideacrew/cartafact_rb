@@ -5,6 +5,15 @@ require 'faraday'
 module CartafactRb
   module Resources
     class Create
+      # Create new instance.
+      # @param document_type [String] The type of the document.
+      # @param title [String] The title of the document.
+      # @param subjects [Array<CartafactRb::Resources::DocumentSubject>] The subjects of this document.
+      # @param identifier [String, nil] A special identifier for this document.
+      # @param description [String, nil] A description of the document.
+      # @param language [String, nil] The language in which the document is written.
+      # @param format [String, nil] The MIME-type of the document.
+      # @param date [String, nil] The Date/Time on which the document was generated.
       def initialize(
         document_type,
         title,
@@ -17,6 +26,7 @@ module CartafactRb
       )
       end
 
+      # @api private
       def encode_for_request
         Faraday::ParamPart.new(
           JSON.dump(as_json),
@@ -24,6 +34,7 @@ module CartafactRb
         )
       end
 
+      # @api private
       def as_json
         document = {
           title: @title,

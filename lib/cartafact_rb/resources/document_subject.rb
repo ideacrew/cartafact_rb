@@ -10,6 +10,7 @@ module CartafactRb
         @type = type
       end
 
+      # @api private
       def self.build_from_hash_array(h_array)
         return [] if h_array.nil?
 
@@ -19,6 +20,7 @@ module CartafactRb
         end
       end
 
+      # @api private
       def as_json
         {
           id: @id,
