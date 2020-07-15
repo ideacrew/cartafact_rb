@@ -27,10 +27,10 @@ module CartafactRb
       # @param signing_secret [String]
       # @return [Void]
       def encode_and_sign_to_http_request(request, signing_secret)
-        authorization_info_b64 = Base64.encode64(as_json)
+        authorization_info_b64 = Base64.strict_encode64(as_json)
         request.headers[ASSERTION_HEADER_NAME] = authorization_info_b64
         signature = OpenSSL::HMAC.digest("SHA256", signing_secret, authorization_info_b64)
-        request.headers[SIGNATURE_HEADER_NAME] = Base64.encode64(signature)
+        request.headers[SIGNATURE_HEADER_NAME] = Base64.strict_encode64(signature)
       end
 
       def as_json

@@ -47,11 +47,11 @@ describe CartafactRb::Authorization::Assertion, "given:
           authorized_subjects: authorized_subjects.map(&:as_json)
         }
       )
-      Base64.encode64(json_value)
+      Base64.strict_encode64(json_value)
     end
 
     let(:expected_assertion_signature) do
-      Base64.encode64(
+      Base64.strict_encode64(
         OpenSSL::HMAC.digest("SHA256", signing_secret, expected_encoded_assertion)
       )
     end
