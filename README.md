@@ -2,18 +2,38 @@
 
 A Ruby-based client for using the Cartafact Document Store.
 
-# Usage
+## Usage
 
 The primary interface to the client is achieved using the `CartafactRb::Client` class.
 
-# Documentation
+## Documentation
 
 Documentation can be generated with `bundle exec yard`.
 
-# Development Status
+## Tests
 
-Document actions:
+Tests can be run with `bundle exec rspec`.
+
+You can additionally generate code coverage data by setting the `COVERAGE` environment variable before running specs:
+`COVERAGE=1 bundle exec rspec`
+
+Coverage data will be available in HTML format in the `coverage` directory.
+
+## Style and Linting
+
+Style and linting is performed using Rubocop.
+
+## Development Status
+
+Client Capabilities:
 * [x] List
 * [x] Read
 * [x] Download
 * [ ] Create
+
+Quality Tools:
+* [x] RSpec (coverage lacking in important areas)
+* [x] SimpleCov
+* [x] Rubocop
+* [x] Yard (documentation is incomplete)
+* [ ] Github Actions (not yet configured)
