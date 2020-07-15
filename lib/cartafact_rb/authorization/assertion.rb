@@ -6,6 +6,7 @@ require "openssl"
 
 module CartafactRb
   module Authorization
+    # An assertion represents a claim by the requesting system that access to a document is allowed.
     class Assertion
       ASSERTION_HEADER_NAME = "X-RequestingIdentity"
       SIGNATURE_HEADER_NAME = "X-RequestingIdentitySignature"

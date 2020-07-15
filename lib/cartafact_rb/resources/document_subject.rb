@@ -2,6 +2,7 @@
 
 module CartafactRb
   module Resources
+    # This class represents the subjects of a document.
     class DocumentSubject
       attr_reader :id, :type
 

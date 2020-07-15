@@ -2,6 +2,7 @@
 
 module CartafactRb
   module Authorization
+    # This class represents entities who are authorized to access a document in the store.
     class AuthorizedSubject
       attr_reader :id
       attr_reader :type
