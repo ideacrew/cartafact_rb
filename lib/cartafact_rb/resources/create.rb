@@ -6,6 +6,8 @@ module CartafactRb
   module Resources
     # Represents the metadata associated with a request to create a document.
     class Create
+      # rubocop:disable Metrics/ParameterLists
+
       # Create new instance.
       # @param document_type [String] The type of the document.
       # @param title [String] The title of the document.
@@ -35,6 +37,8 @@ module CartafactRb
         @format = format
         @date = date
       end
+
+      # rubocop:enable Metrics/ParameterLists
 
       # @api private
       def encode_for_request
