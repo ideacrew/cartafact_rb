@@ -35,6 +35,7 @@ Advanced Client Capabilities:
 * [ ] Abstracted Retry
 * [ ] Abstracted Error Handling and Exceptions
 * [ ] Streaming Document Download
+* [ ] Allow Self-Signed SSL Endpoints via Client Options
 
 Quality Tools:
 * [x] RSpec (coverage lacking in important areas)
