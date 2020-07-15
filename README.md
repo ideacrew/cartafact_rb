@@ -25,11 +25,16 @@ Style and linting is performed using Rubocop.
 
 ## Development Status
 
-Client Capabilities:
+Document Capabilities:
 * [x] List
 * [x] Read
 * [x] Download
 * [ ] Create
+
+Advanced Client Capabilities:
+* [ ] Abstracted Retry
+* [ ] Abstracted Error Handling and Exceptions
+* [ ] Streaming Document Download
 
 Quality Tools:
 * [x] RSpec (coverage lacking in important areas)
