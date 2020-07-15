@@ -44,5 +44,5 @@ Quality Tools:
 * [x] Yard (documentation is incomplete)
 * [ ] Github Actions
   * [x] RSpec
-  * [ ] Rubocop
+  * [x] Rubocop
   * [ ] Coverage
