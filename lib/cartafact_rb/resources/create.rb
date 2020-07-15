@@ -4,11 +4,13 @@ require 'faraday'
 
 module CartafactRb
   module Resources
+    # Represents the metadata associated with a request to create a document.
     class Create
       # Create new instance.
       # @param document_type [String] The type of the document.
       # @param title [String] The title of the document.
-      # @param subjects [Array<CartafactRb::Resources::DocumentSubject>] The subjects of this document.
+      # @param subjects [Array<CartafactRb::Resources::DocumentSubject>]
+      #   The subjects of this document.
       # @param identifier [String, nil] A special identifier for this document.
       # @param description [String, nil] A description of the document.
       # @param language [String, nil] The language in which the document is written.
@@ -24,6 +26,14 @@ module CartafactRb
         format: nil,
         date: nil
       )
+        @document_type = document_type
+        @title = title
+        @subjects = subjects
+        @identifier = identifier
+        @description = description
+        @language = language
+        @format = format
+        @date = date
       end
 
       # @api private
@@ -41,21 +51,11 @@ module CartafactRb
           document_type: @doc_type,
           subjects: @subjects.map(&:as_json)
         }
-        unless @identifier.nil?
-          document[:identifier] = @identifier
-        end
-        unless @description.nil?
-          document[:description] = @description
-        end
-        unless @language.nil?
-          document[:language] = @language
-        end
-        unless @format.nil?
-          document[:format] = @format
-        end
-        unless @date.nil?
-          document[:date] = @date
-        end
+        (document[:identifier] = @identifier) unless @identifier.nil?
+        (document[:description] = @description) unless @description.nil?
+        (document[:language] = @language) unless @language.nil?
+        (document[:format] = @format) unless @format.nil?
+        (document[:date] = @date) unless @date.nil?
         document
       end
     end

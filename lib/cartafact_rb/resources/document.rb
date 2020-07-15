@@ -2,6 +2,7 @@
 
 module CartafactRb
   module Resources
+    # Represents the metadata of a document in the store.
     class Document
       # @return [String]
       attr_reader :id

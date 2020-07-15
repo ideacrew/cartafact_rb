@@ -31,7 +31,8 @@ module CartafactRb
 
     # List matching documents to access is authorized.
     # @param user_id [String] The ID or Email of the user making the request.
-    # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>] The authorized subjects for the request.
+    # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>]
+    #   The authorized subjects for the request.
     # @return [Array<Cartafact::Resources::Document>] the list of documents
     def list(user_id, authorized_subjects)
       assertion = generate_assertion(user_id, authorized_subjects)
@@ -47,7 +48,8 @@ module CartafactRb
 
     # Download the content of a specific document.
     # @param user_id [String] The ID or Email of the user making the request.
-    # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>] The authorized subjects for the request.
+    # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>]
+    #   The authorized subjects for the request.
     # @param document_id [String] The ID of the document.
     # @return [Faraday::Response] The service response.
     def download(user_id, authorized_subjects, document_id)
@@ -59,7 +61,8 @@ module CartafactRb
 
     # Get information about a specific document.
     # @param user_id [String] The ID or Email of the user making the request.
-    # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>] The authorized subjects for the request.
+    # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>]
+    #   The authorized subjects for the request.
     # @param document_id [String] The ID of the document.
     # @return [Cartafact::Resources::Document] the list of documents
     def get(user_id, authorized_subjects, document_id)

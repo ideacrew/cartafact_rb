@@ -13,7 +13,8 @@ module CartafactRb
       # Create a new assertion.
       # @param s_name [String] The name of the system making the request.
       # @param user_id [String] The ID or Email of the user making the request.
-      # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>] The authorized subjects for the request.
+      # @param authorized_subjects [Array<CartafactRb::Authorization::AuthorizedSubject>]
+      #   The authorized subjects for the request.
       def initialize(s_name, user_id, authorized_subjects)
         @system_name = s_name
         @user_id = user_id
