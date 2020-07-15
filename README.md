@@ -41,4 +41,7 @@ Quality Tools:
 * [x] SimpleCov
 * [x] Rubocop
 * [x] Yard (documentation is incomplete)
-* [ ] Github Actions (not yet configured)
+* [ ] Github Actions
+  * [x] RSpec
+  * [ ] Rubocop
+  * [ ] Coverage
