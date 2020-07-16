@@ -25,6 +25,9 @@ Style and linting is performed using Rubocop.
 
 ## Development Status
 
+Design Considerations:
+* [ ] Align Document Vocabulary with newly specified DCMI metadata interface
+
 Document Capabilities:
 * [x] List
 * [x] Read
